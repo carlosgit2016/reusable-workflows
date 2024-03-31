@@ -9,6 +9,9 @@ jobs:
     with:
       validate: true
       pr: true # Will comment in the PR
+      plan: false # Whether or not to execute plan
+      apply: true # Whether or not to execute apply
+      destroy: false # Whether or not to execute destroy
       fmt-check: true # Will check the .tf files format and fail in case of any format issues
       workspace: default # Workspace to be used, it will create in case do not exists 
       working-dir: infrastructure # Workdir where the resources are in 
@@ -16,6 +19,7 @@ jobs:
 ```
 
 ### Basic example
+This will plan the infrastructure code from the current workdir
 ```yaml
 jobs:
   plan-ephemeral:
